@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import profil from "../images/profil.jpg"
+import profil from "../images/profil.webp"
 import { AnimatePresence, motion } from "framer-motion"
 
 const Profile = () => {
@@ -15,13 +15,13 @@ const Profile = () => {
   }, [textArr.length])
 
   return (
-    <div className="flex flex-col justify-center items-center gap-6">
-      <img src={profil} alt="Wetar's profile" style={{ width: 215 }} />
-      <div className="flex justify-center items-start gap-2">
-        <h1 className="text-white text-2xl font-bold">Wetar</h1>
-        <p className="text-white text-2xl font-medium">|</p>
+    <div className="flex flex-col justify-center items-center gap-2 md:gap-4">
+      <img src={profil} alt="Wetar's profile" className="w-42 md:w-65" />
+      <div className="flex justify-center items-center gap-2">
+        <h1 className="text-white text-lg md:text-2xl font-bold">Wetar</h1>
+        <p className="text-white text-lg md:text-2xl font-medium">|</p>
         <AnimatePresence mode="wait">
-          <motion.h1 initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.8 }} key={textIndex} className="text-gray-400 text-2xl font-bold">{textArr[textIndex]}</motion.h1>
+          <motion.h1 initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.8 }} key={textIndex} className="text-gray-400 text-lg md:text-2xl font-bold">{textArr[textIndex]}</motion.h1>
         </AnimatePresence>
       </div>
     </div>
