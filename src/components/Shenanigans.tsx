@@ -4,25 +4,29 @@ import { useGlitch } from "react-powerglitch"
 
 const Projects = () => {
   const { ref } = useGlitch()
-  const logoDatas: { icon: IconType, color: string, url: string }[] = [
+  const logoDatas: { icon: IconType, color: string, hovered: string, url: string }[] = [
     {
       icon: SiYoutube,
       color: "#FF0033",
+      hovered: "#c90028",
       url: "https://www.youtube.com/@wetarwashere"
     },
     {
       icon: SiGithub,
-      color: "#6A7282",
+      color: "#ffffff",
+      hovered: "#6A7282",
       url: "https://github.com/wetarwashere"
     },
     {
       icon: SiDiscord,
       color: "#5865F2",
+      hovered: "#454fc4",
       url: "https://discord.com/users/1063743025710379018"
     },
     {
       icon: SiReddit,
       color: "#ff5212",
+      hovered: "#b83e12",
       url: "https://www.reddit.com/user/wetarwashere"
     }
   ]
@@ -44,7 +48,7 @@ const Projects = () => {
         <div className="flex justify-center items-start gap-3">
           {logoDatas.map((logoData, index) => (
             <a href={logoData.url} key={index} target="_blank" rel="noopener noreferrer">
-              <logoData.icon className="text-white size-7 md:size-8 transition-all duration-500 active:-scale-x-100 hover:-scale-x-100" onMouseEnter={(event) => event.currentTarget.style.color = logoData.color} onMouseLeave={(event) => event.currentTarget.style.color = "#ffffff"} />
+              <logoData.icon className="text-white size-7 md:size-8 transition-all duration-500 active:scale-108 hover:scale-108" color={logoData.color} onMouseEnter={(event) => event.currentTarget.style.color = logoData.hovered} onMouseLeave={(event) => event.currentTarget.style.color = logoData.color} />
             </a>
           ))}
         </div>
