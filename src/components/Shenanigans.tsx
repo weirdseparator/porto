@@ -20,7 +20,7 @@ const Projects = () => {
     {
       icon: SiDiscord,
       color: "#5865F2",
-      hovered: "#454fc4",
+      hovered: "#3740a3",
       url: "https://discord.com/users/1063743025710379018"
     },
     {
